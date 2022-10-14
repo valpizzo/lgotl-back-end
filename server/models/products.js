@@ -1,0 +1,28 @@
+var Product = require('../database').Product;
+
+module.exports = {
+  getAll: async function (callback) {
+    const products = await Product.find();
+    if (!products) {
+      callback(err);
+    } else {
+      callback(null, products);
+    }
+  }, // a function which gets all the products from the database
+
+  create: function (product, callback) {
+    console.log(product);
+
+    Product.create(product, (err) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, 'Success creating product');
+      }
+    });
+
+
+    //const products = await Product.find();
+    //console.log(products.length);
+  } // a function which can be used to insert products into the database
+};
