@@ -10,6 +10,21 @@ let productSchema = mongoose.Schema({
   "image": String,
 });
 
+let eventSchema = mongoose.Schema({
+  "name": String,
+  "street": String,
+  "city": String,
+  "state": String,
+  "zip": Number,
+  "description": String,
+  "start_time": String,
+  "end_time": String,
+  "date": Date,
+  "image": String,
+});
+
 let Product = mongoose.model('Product', productSchema);
+let Event = mongoose.model('Event', eventSchema);
 
 module.exports.Product = Product;
+module.exports.Event = Event;
