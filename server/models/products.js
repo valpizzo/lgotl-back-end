@@ -18,7 +18,7 @@ module.exports = {
     }
   }, // a function which gets all the products from the database
   create: function (product, callback) {
-    console.log(product);
+    console.log("PRODUCT: ", product);
 
     Product.create(product, (err) => {
       if (err) {
